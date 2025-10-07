@@ -1,5 +1,5 @@
 {
-  "name": "redemption-jiffy",
+  "name": "redemption-solutionsss",
   "private": true,
   "scripts": {
     "build": "remix vite:build",
@@ -11,45 +11,64 @@
     "env": "shopify app env",
     "start": "remix-serve ./build/server/index.js",
     "docker-start": "npm run setup && npm run start",
-    "setup": "prisma generate && prisma migrate deploy",
+    "setup": "prisma generate && prisma db push",
     "lint": "eslint --cache --cache-location ./node_modules/.cache/eslint .",
     "shopify": "shopify",
     "prisma": "prisma",
     "graphql-codegen": "graphql-codegen",
-    "vite": "vite"
+    "vite": "vite",
+    "heroku-postbuild": "PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true npm run setup && npm run build",
+    "postinstall": "npm prune --production"
   },
   "type": "module",
   "engines": {
     "node": "^18.20 || ^20.10 || >=21.0.0"
   },
   "dependencies": {
-    "@prisma/client": "^6.2.1",
+    "@prisma/client": "^6.16.3",
     "@remix-run/dev": "^2.16.1",
     "@remix-run/fs-routes": "^2.16.1",
     "@remix-run/node": "^2.16.1",
     "@remix-run/react": "^2.16.1",
     "@remix-run/serve": "^2.16.1",
     "@shopify/app-bridge-react": "^4.1.6",
-    "@shopify/polaris": "^12.0.0",
+    "@shopify/polaris": "^12.27.0",
+    "@shopify/polaris-icons": "^9.3.1",
     "@shopify/shopify-app-remix": "^3.7.0",
     "@shopify/shopify-app-session-storage-prisma": "^6.0.0",
+    "@types/nodemailer": "^6.4.19",
+    "antd": "^5.26.6",
+    "chart.js": "^4.5.0",
+    "csstype": "^3.1.3",
+    "formik": "^2.4.6",
     "isbot": "^5.1.0",
-    "prisma": "^6.2.1",
+    "json2csv": "^6.0.0-alpha.2",
+    "nodemailer": "^7.0.5",
+    "pdfkit": "^0.17.1",
+    "puppeteer": "^24.17.0",
     "react": "^18.2.0",
+    "react-chartjs-2": "^5.3.0",
     "react-dom": "^18.2.0",
-    "vite-tsconfig-paths": "^5.0.1"
+    "react-icons": "^5.5.0",
+    "recharts": "^3.2.1",
+    "undici-types": "^7.15.0",
+    "uuid": "^11.1.0",
+    "vite-tsconfig-paths": "^5.0.1",
+    "xlsx": "^0.18.5",
+    "yup": "^1.6.1"
   },
   "devDependencies": {
     "@remix-run/eslint-config": "^2.16.1",
     "@remix-run/route-config": "^2.16.1",
     "@shopify/api-codegen-preset": "^1.1.1",
     "@types/eslint": "^9.6.1",
-    "@types/node": "^22.2.0",
-    "@types/react": "^18.2.31",
+    "@types/node": "^22.17.2",
+    "@types/react": "^18.3.24",
     "@types/react-dom": "^18.2.14",
     "eslint": "^8.42.0",
     "eslint-config-prettier": "^10.0.1",
     "prettier": "^3.2.4",
+    "prisma": "^6.16.3",
     "typescript": "^5.2.2",
     "vite": "^6.2.2"
   },
@@ -63,15 +82,18 @@
     "@graphql-tools/url-loader": "8.0.16",
     "@graphql-codegen/client-preset": "4.7.0",
     "@graphql-codegen/typescript-operations": "4.5.0",
-    "minimatch": "9.0.5",
-    "vite": "^6.2.2"
+    "minimatch": "9.0.5"
   },
   "overrides": {
     "@graphql-tools/url-loader": "8.0.16",
     "@graphql-codegen/client-preset": "4.7.0",
     "@graphql-codegen/typescript-operations": "4.5.0",
-    "minimatch": "9.0.5",
-    "vite": "^6.2.2"
+    "minimatch": "9.0.5"
+  },
+  "config": {
+    "puppeteer": {
+      "skipDownload": true
+    }
   },
   "author": "DELL"
 }
