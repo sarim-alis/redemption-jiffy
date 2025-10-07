@@ -27,5 +27,5 @@ scopes = "read_assigned_fulfillment_orders,read_customers,read_discounts,read_gi
 redirect_urls = [
   "https://redemption-jiffy-89b366a6e710.herokuapp.com/auth/callback",
   "https://redemption-jiffy-89b366a6e710.herokuapp.com/auth/shopify/callback",
-  "hhttps://redemption-jiffy-89b366a6e710.herokuapp.com/api/auth/callback"
+  "https://redemption-jiffy-89b366a6e710.herokuapp.com/api/auth/callback"
 ]
